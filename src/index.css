@@ -8,18 +8,39 @@ body {
     color: yellow;
     font-weight: bold;
     padding: 10px;
-    display: inline-block;
     border: 1px solid white;
+    border-radius: 5px;
+    margin: 2px;
     width: 200px;
-    height: 200px;
+    height: auto;
     text-align: center;
+
+    display: inline-grid;
+   }
+
+  .pokemonCard:hover {
+    color: black;
+    background-color: yellow;
   }
 
   .navigation {
-    display: inline-flex;
     background-color: black;
     border: 2px solid white;
-    width: auto;
-    padding: 4px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 100px;
+    padding: 8px;
     color: white;
+  }
+
+  .navigation:hover {
+    background-color: white;
+    border: white;
+    color: black;
+  }
+
+  .navigation:active {
+    background-color: yellow;
+    border: yellow;
+    color: black;
   }
