@@ -37,12 +37,17 @@ function App() {
   if (loading) return "Loading..."
 
   return (
-    <>
-    <PokemonList pokemon={pokemon} />
-    <Pagination
-      gotoNextPage={gotoNextPage ? gotoNextPage : null}
-      gotoPrevPage={gotoPrevPage ? gotoPrevPage : null} />
-      </>
+  <>
+      <div className="pokedexBody">
+        <PokemonList 
+        pokemon={pokemon}
+        // sprite={sprites.pokemon.official-artwork.front_default}  
+        />
+      </div>
+        <Pagination 
+          gotoNextPage={gotoNextPage ? gotoNextPage : null}
+          gotoPrevPage={gotoPrevPage ? gotoPrevPage : null} />
+  </>
   );
 }
 
