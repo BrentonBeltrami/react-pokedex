@@ -4,6 +4,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   }
 
+  .loading {
+    font-weight: bolder;
+    text-shadow: 2px 2px black;
+  }
+
+  a {
+    color: rgb(190,193,6);
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+  }
+
   .pokedexBody {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -22,6 +38,7 @@ body {
     filter: drop-shadow(3px 5px 4px black);
     height: auto;
     text-align: center;
+    text-transform: capitalize;
 
     --c: rgb(179,0,0); 
     background: rgb(179,0,0);

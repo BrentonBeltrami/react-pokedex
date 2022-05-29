@@ -5,6 +5,8 @@ function clickHandle() {
     "#", "_blank")
 }
 
+// documentation at https://pokeapi.co/docs/v2#pokemon
+
 
 export default function PokemonList( { pokemon, pokeUrl }) {
   return (
@@ -14,15 +16,15 @@ export default function PokemonList( { pokemon, pokeUrl }) {
               className='pokemonCard' 
               key={p}
               onClick={clickHandle}>
-                {p.toUpperCase(0).charAt(0) + p.toLowerCase().slice(1)}
+                {p}
             </div>
         ))}
 
-        {/* {pokeUrl.map(u => (
-          <div>
-            <a href={u}>link</a>
-          </div>
-        ) )} */}
+        {pokeUrl.map(u => (
+          <>
+            <a href={u}>Unique API link</a>
+          </>
+        ) )}
     </>
   )
 }

@@ -22,7 +22,7 @@ function App() {
         setNextPageUrl(res.data.next)
         setPrevPageUrl(res.data.previous)
         setPokemon(res.data.results.map(p => p.name))
-        setPokeUrl(res.data.results.map(p => p.url))
+        setPokeUrl(res.data.results.map(u => u.url))
       })
 
       return () => cancel()
@@ -36,7 +36,7 @@ function App() {
   setCurrentPageUrl(prevPageUrl)
 }
 
-  if (loading) return "Loading..."
+  if (loading) return <p className="loading">Loading...</p>
 
   return (
   <>
