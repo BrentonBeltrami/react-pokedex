@@ -32,10 +32,7 @@ body {
     -webkit-background-clip: text, padding-box, padding-box;
             background-clip: text, padding-box, padding-box;
     transition: 0s, color .2s, background-color .2s, border 0.2s;
-    
-    /* background: rgb(179,0,0);
-    background: linear-gradient(90deg, rgba(179,0,0,1) 0%, rgba(255,0,0,1) 53%, rgba(179,0,0,1) 100%); */
-   }
+}
 
   .pokemonCard:hover {
     color: #fff;
@@ -43,10 +40,14 @@ body {
     --_p: 100%;
     transition: 0.2s, color 0s .2s, background-color 0s .2s;
     border: 2px solid rgb(190,193,6);
-    
-    /* background: rgb(190,193,6);
-    background: radial-gradient(circle, rgba(190,193,6,1) 0%, rgba(255,244,0,1) 55%, rgba(177,155,5,1) 100%); 
-    background-image: url("./pika.png"); */
+  }
+
+  .pokemonCard:active {
+    background: rgb(190,193,6);
+    background: radial-gradient(circle, rgba(190,193,6,1) 0%, rgba(255,244,0,1) 55%, rgba(177,155,5,1) 100%);    
+    border: 2px solid rgb(190,193,6);
+    color: black;
+    text-shadow: 1px 1px rgb(112, 98, 4);
   }
 
   .pageButtons {

@@ -5,6 +5,7 @@ import axios from "axios";
 
 function App() {
   const [pokemon, setPokemon] = useState([])
+  const [pokeUrl, setPokeUrl] = useState([])
   const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
   const [nextPageUrl, setNextPageUrl] = useState()
   const [prevPageUrl, setPrevPageUrl] = useState()
@@ -21,9 +22,10 @@ function App() {
         setNextPageUrl(res.data.next)
         setPrevPageUrl(res.data.previous)
         setPokemon(res.data.results.map(p => p.name))
+        setPokeUrl(res.data.results.map(p => p.url))
       })
 
-      return () => {cancel()}
+      return () => cancel()
   }, [currentPageUrl])
 
   function gotoNextPage(){
@@ -40,13 +42,13 @@ function App() {
   <>
       <div className="pokedexBody">
         <PokemonList 
-        pokemon={pokemon}
-        // sprite={sprites.pokemon.official-artwork.front_default}  
+          pokemon={pokemon}
+          pokeUrl={pokeUrl}
         />
       </div>
         <Pagination 
-          gotoNextPage={gotoNextPage ? gotoNextPage : null}
-          gotoPrevPage={gotoPrevPage ? gotoPrevPage : null} />
+          gotoNextPage={nextPageUrl ? gotoNextPage : null}
+          gotoPrevPage={prevPageUrl ? gotoPrevPage : null} />
   </>
   );
 }
