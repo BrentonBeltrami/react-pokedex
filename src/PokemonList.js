@@ -1,30 +1,24 @@
+// documentation at https://pokeapi.co/docs/v2#pokemon
 import React from 'react'
 
-function clickHandle() {        
-  window.open(            // Need to pull URL from API
-    "#", "_blank")
-}
 
-// documentation at https://pokeapi.co/docs/v2#pokemon
+export default function PokemonList( { pokeData }) {
 
+  function clickHandle({ url }) {
+    //NOTE: I am not sure why this requires pokeman instead of pokeman.url
+    window.open(`${url}`, "_blank")
+  }
 
-export default function PokemonList( { pokemon, pokeUrl }) {
   return (
     <>
-        {pokemon.map(p => (
-            <div 
-              className='pokemonCard' 
-              key={p}
-              onClick={clickHandle}>
-                {p}
+        {pokeData.map(pokeman => (
+            <div
+              className='pokemonCard'
+              key={pokeman.name}
+              onClick={() => clickHandle(pokeman)}>
+                {pokeman.name}
             </div>
         ))}
-
-        {pokeUrl.map(u => (
-          <>
-            <a href={u}>Unique API link</a>
-          </>
-        ) )}
     </>
   )
 }
